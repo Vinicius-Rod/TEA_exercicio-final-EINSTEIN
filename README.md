@@ -65,3 +65,46 @@ with open(txt_file_path, 'r') as txt_file:
 
 print("Separação concluída.")
 ```
+
+# 3 - Download das bases de dados do Annovar para o hg19 (genoma de referência) e Anotação
+
+*   refGene
+*   clinvar_20221231
+*   revel
+*   intervar
+
+```bash
+#hg19 - refGene
+perl annovar/annotate_variation.pl -buildver hg19 -downdb -webfrom annovar refGene annovar/humandb/
+
+#hg19 - clinvar_20221231
+perl annovar/annotate_variation.pl -buildver hg19 -downdb -webfrom annovar clinvar_20221231 annovar/humandb/
+
+#hg19 - revel
+perl annovar/annotate_variation.pl -buildver hg19 -downdb -webfrom annovar revel annovar/humandb/
+
+#hg19 - intervar
+perl annovar/annotate_variation.pl -buildver hg19 -downdb -webfrom annovar intervar_20180118 annovar/humandb/
+```
+
+# 3.1 - Anotação dos Saudáveis
+
+```bash
+#Anotação dos SAUD_ Masculinos
+perl /content/annovar/table_annovar.pl /content/TEA_Einstein/dados/SAUD_M.txt \
+annovar/humandb/ -buildver hg19 \
+-out /content/TEA_Einstein/dados/annovar/amostra_SAUD_M \
+-protocol revel,refGene,clinvar_20221231,intervar_20180118 -operation f,g,f,f -nastring "."
+```
+
+```bash
+#Anotação dos SAUD_ Femininos
+perl /content/annovar/table_annovar.pl /content/TEA_Einstein/dados/SAUD_F.txt \
+annovar/humandb/ -buildver hg19 \
+-out /content/TEA_Einstein/dados/annovar/amostra_SAUD_F \
+-protocol revel,refGene,clinvar_20221231,intervar_20180118 -operation f,g,f,f -nastring "."
+```
+
+```bash
+mv /content/TEA_Einstein/dados/annovar/amostra_SAUD_* /content/TEA_Einstein/dados/annovar/amostra_01 # Mover arquivos da amostra_SAUD_ para o diretório
+```
