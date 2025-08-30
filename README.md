@@ -15,7 +15,7 @@ mkdir TEA_Einstein/dados/annovar/amostra_02
 # 1.2 - Download dos arquivos
 
 ```bash
-output = 'variantes.xlsx
+output = 'variantes.xlsx'
 mv variantes.txt TEA_Einstein/dados/
 mv variantes.xlsx TEA_Einstein/dados/
 ```
