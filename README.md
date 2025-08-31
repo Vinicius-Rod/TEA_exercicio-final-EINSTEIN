@@ -110,3 +110,61 @@ annovar/humandb/ -buildver hg19 \
 ```bash
 mv /content/TEA_Einstein/dados/annovar/amostra_SAUD_* /content/TEA_Einstein/dados/annovar/amostra_01 # Mover arquivos da amostra_SAUD_ para o diretório
 ```
+
+# 3.2 - Anotação dos TEA
+
+```bash
+#Anotação dos Autistas Masculinos
+perl /content/annovar/table_annovar.pl /content/TEA_Einstein/dados/TEA_M.txt \
+annovar/humandb/ -buildver hg19 \
+-out /content/TEA_Einstein/dados/annovar/amostra_TEA_M \
+-protocol revel,refGene,clinvar_20221231,intervar_20180118 -operation f,g,f,f -nastring "."
+```
+
+```bash
+#Anotação dos Autistas Femininos
+# perl /content/annovar/table_annovar.pl /content/TEA_Einstein/dados/TEA_F.txt \
+annovar/humandb/ -buildver hg19 \
+-out /content/TEA_Einstein/dados/annovar/amostra_TEA_F \
+-protocol revel,refGene,clinvar_20221231,intervar_20180118 -operation f,g,f,f -nastring "."
+```
+
+```bash
+mv /content/TEA_Einstein/dados/annovar/amostra_TEA_* /content/TEA_Einstein/dados/annovar/amostra_02 # Mover arquivos da amostra_TEA_ para o diretório
+```
+
+# 3.3 - Converter arquivos para .csv
+
+```bash
+import pandas as pd
+df_saud_fem = pd.read_csv('/content/TEA_Einstein/dados/annovar/amostra_01/amostra_SAUD_F.hg19_multianno.txt', sep='\t')
+df_saud_fem.to_csv('/content/TEA_Einstein/dados/amostra_SAUD_F.hg19_multianno.csv', index=False)
+display(df_saud_fem)
+
+import pandas as pd
+df_saud_masc = pd.read_csv('/content/TEA_Einstein/dados/annovar/amostra_01/amostra_SAUD_M.hg19_multianno.txt', sep='\t')
+df_saud_masc.to_csv('/content/TEA_Einstein/dados/amostra_SAUD_M.hg19_multianno.csv', index=False)
+display(df_saud_masc)
+
+import pandas as pd
+df_tea_fem = pd.read_csv('/content/TEA_Einstein/dados/annovar/amostra_02/amostra_TEA_F.hg19_multianno.txt', sep='\t')
+df_tea_fem.to_csv('/content/TEA_Einstein/dados/amostra_TEA_F.hg19_multianno.csv', index=False)
+display(df_tea_fem)
+
+import pandas as pd
+df_tea_masc = pd.read_csv('/content/TEA_Einstein/dados/annovar/amostra_02/amostra_TEA_M.hg19_multianno.txt', sep='\t')
+df_tea_masc.to_csv('/content/TEA_Einstein/dados/amostra_TEA_M.hg19_multianno.csv', index=False)
+display(df_tea_masc)
+```
+
+```bash
+mkdir TEA_Einstein/dados/dados_brutos
+mkdir TEA_Einstein/dados/dataframes
+```
+
+```bash
+mv /content/TEA_Einstein/dados/amostra* /content/TEA_Einstein/dados/dataframes
+mv /content/TEA_Einstein/dados/variantes* /content/TEA_Einstein/dados/dados_brutos
+mv /content/TEA_Einstein/dados/TEA_* /content/TEA_Einstein/dados/dados_brutos
+mv /content/TEA_Einstein/dados/SAUD_* /content/TEA_Einstein/dados/dados_brutos
+```
