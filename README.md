@@ -385,7 +385,7 @@ print("Valor p:", p_valor)
 * Jamain S, Quach H, Betancur C, Råstam M, Colineaux C, Gillberg IC, Soderstrom H, Giros B, Leboyer M, Gillberg C, Bourgeron T; Paris Autism Research International Sibpair Study. Mutations of the X-linked genes encoding neuroligins NLGN3 and NLGN4 are associated with autism. Nat Genet. 2003 May;34(1):27-9. doi: 10.1038/ng1136. PMID: 12669065; PMCID: PMC1925054. https://pubmed.ncbi.nlm.nih.gov/12669065/
 
 Nós rodamos uma primeira vez o código e descobrimos que os seguintes genes não apareciam na nossa amostra, então decidimos tirá-los do gráfico: SYN1, RIMS3, CACNB2, KCNMB4, KCNQ5, CDH8, CDH9, PCDH19.
-"""
+```
 
 ```bash
 import pandas as pd
@@ -463,7 +463,8 @@ print("Para Homens Autistas:", "{:.2f}%".format(proporcao_homensTEA_SCN2A))
 """# Priorização de variantes patogênicas"""
 
 print(SAUD_M['InterVar_automated'])
-
+```
+```bash
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -537,7 +538,8 @@ print("Para Mulheres Autistas:", "{:.2f}%".format(proporcao_mulheresTEApatho_SCN
 print("Para Homens Autistas:", "{:.2f}%".format(proporcao_homensTEApatho_SCN2A))
 
 """# Qual a variante patogênica ou provavelmente patogênica mais comum no gene SCN2A?"""
-
+```
+```bash
 import pandas as pd
 
 # Leitura dos dataframes
@@ -576,7 +578,8 @@ pd.options.display.float_format = '{:,.0f}'.format
 display(combination_counts)
 
 #Indivíduos masculinos que possuem a variante 2:166201311:C:T no gene SCN2A
-
+```
+```bash
 import pandas as pd
 
 # Caminho do arquivo Excel no Google Drive
