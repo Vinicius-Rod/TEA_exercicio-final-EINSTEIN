@@ -312,11 +312,12 @@ diferenca_proporcao_saud = proporcao_mulheres_saud - proporcao_homens_saud
 
 # Imprimindo a diferença entre as proporções
 print("Diferença na proporção entre Homens e Mulheres Saudáveis: {:.2f}%".format(diferenca_proporcao_saud))
-
-"""Calculando a proporção das variantes patogênicas em homens e mulheres autistas"""
 ```
-
 ```bash
+"""Calculando a proporção das variantes patogênicas em homens e mulheres autistas"""
+
+
+
 # Definindo o número total de amostras para homens e mulheres autistas
 total_amostras_homens_tea = 9868
 total_amostras_mulheres_tea = 2298
@@ -443,8 +444,8 @@ plt.show()
 
 Tirar a proporção entre autistas homens e mulheres, proporção entre homens saudáveis e mulheres saudáveis. Tirar a proporção de variantes do gene SCN2A.  
 Avaliar quais são as trocas que estão ocorrendo, avaliar a localização gênica nas variantes.
-"""
-
+```
+```bash
 # Definindo o número total de amostras para homens e mulheres autistas
 total_amostras_homens_tea = 9868
 total_amostras_mulheres_tea = 2298
@@ -536,10 +537,11 @@ proporcao_mulheresTEApatho_SCN2A = 2 / total_amostras_mulheres_tea * 100
 print("Proporção de variantes 'SCN2A' em relação ao total de amostras dos pacientes TEA:")
 print("Para Mulheres Autistas:", "{:.2f}%".format(proporcao_mulheresTEApatho_SCN2A))
 print("Para Homens Autistas:", "{:.2f}%".format(proporcao_homensTEApatho_SCN2A))
-
-"""# Qual a variante patogênica ou provavelmente patogênica mais comum no gene SCN2A?"""
 ```
 ```bash
+"""# Qual a variante patogênica ou provavelmente patogênica mais comum no gene SCN2A?"""
+
+
 import pandas as pd
 
 # Leitura dos dataframes
@@ -576,10 +578,11 @@ pd.options.display.float_format = '{:,.0f}'.format
 
 # Exibição da tabela usando o display do Pandas
 display(combination_counts)
-
-#Indivíduos masculinos que possuem a variante 2:166201311:C:T no gene SCN2A
 ```
 ```bash
+#Indivíduos masculinos que possuem a variante 2:166201311:C:T no gene SCN2A
+
+
 import pandas as pd
 
 # Caminho do arquivo Excel no Google Drive
